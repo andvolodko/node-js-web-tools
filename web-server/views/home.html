@@ -1,0 +1,97 @@
+<% extend 'layout.html' %>
+
+<% include 'widget_ad_hor.html' %>
+
+<div class="card home">
+  <div class="header">
+    <h1 class="title">
+      <%- @pageTitle %>
+    </h1>
+    <p class="category"></p>
+  </div>
+  <div class="content">
+    <div class="typo-line">
+      <%- @text %>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="header">
+    <h4 class="title">Supported Types For Conversion</h4>
+    <p class="category"></p>
+  </div>
+  <div class="content all-icons">
+    <div class="row">
+    
+      <div class="font-icon-list col-lg-3 col-md-3 col-sm-4 col-xs-6">
+        <a href="/ebook-converter" title="eBook converter">
+          <div class="font-icon-detail"><i class="pe-7s-notebook"></i>
+            <div>eBook converter</div>
+          </div>
+        </a>
+        <ul>
+        <% for ext in @tools.ebookOut : %>
+          <li><a href="/ebook-converter/<%-ext %>" target="_blank" title="Online Free <%-ext %> eBook Converter">Convert to <%-ext %></a></li>
+        <% end %>
+        </ul>
+      </div>
+      
+      <div class="font-icon-list col-lg-3 col-md-3 col-sm-4 col-xs-6">
+        <a href="/audio-converter" title="Audio converter">
+        <div class="font-icon-detail"><i class="pe-7s-music"></i>
+          <div>Audio converter</div>
+        </div>
+        </a>
+        <ul>
+        <% for ext in @tools.audioOut : %>
+          <li><a href="/audio-converter/<%-ext %>" target="_blank" title="Online <%-ext %> Audio Converter">Convert to <%-ext %></a></li>
+        <% end %>
+        </ul>
+      </div>
+      
+      <div class="font-icon-list col-lg-3 col-md-3 col-sm-4 col-xs-6">
+         <a href="/image-converter" title="Image converter">
+          <div class="font-icon-detail"><i class="pe-7s-photo"></i>
+          <div>Image converter</div>
+          </div>
+        </a>
+        <ul>
+        <% for ext in @tools.imagesOut : %>
+          <li><a href="/image-converter/<%-ext %>" target="_blank" title="Online <%-ext %> Image Converter">Convert to <%-ext %></a></li>
+        <% end %>
+        </ul>
+      </div>
+      
+      <div class="font-icon-list col-lg-3 col-md-3 col-sm-4 col-xs-6">
+          <a href="/document-converter" title="Document converter">
+            <div class="font-icon-detail"><i class="pe-7s-news-paper"></i>
+              <div>Document converter</div>
+            </div>
+          </a>
+          <ul>
+          <% for ext in @tools.documentOut : %>
+            <li><a href="/document-converter/<%-ext %>" target="_blank" title="Online <%-ext %> Document Converter">Convert to <%-ext %></a></li>
+          <% end %>
+          </ul>
+      </div>
+
+      <div class="font-icon-list col-lg-3 col-md-3 col-sm-4 col-xs-6">
+          <a href="/video-converter" title="Video converter">
+            <div class="font-icon-detail"><i class="pe-7s-video"></i>
+              <div>Video converter</div>
+            </div>
+          </a>
+          <ul>
+          <% for ext in @tools.videoOut : %>
+            <li><a href="/video-converter/<%-ext %>" target="_blank" title="Online Free <%-ext %> Video Converter">Convert to <%-ext %></a></li>
+          <% end %>
+          </ul>
+      </div>
+    
+    </div>
+
+  </div>
+</div>
+
+<% include 'widget_stats.html' %>

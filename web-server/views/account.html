@@ -1,0 +1,67 @@
+<% extend 'layout.html' %>
+
+<div class="col-md-4">
+    <div class="card card-user">
+        <div class="image">
+            <img src="<%- @config.site_static_url %>/img/avatar_bg.jpg" alt="Your Avatar background"/>
+        </div>
+        <div class="content">
+            <div class="author">
+                 <!-- <a href="#"> -->
+                <img class="avatar border-gray" src="<%= @user.photo %>" alt="Your Avatar"/>
+                  <h1 class="title"><%= @user.first_name %> <%= @user.last_name %></h1>
+                <!-- </a> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-8">
+    <div class="card">
+        <div class="header">
+            <h4 class="title">Profile info</h4>
+        </div>
+        <div class="content">
+            <form action="" method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" disabled placeholder="First Name" value="<%= @user.first_name %>">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" disabled placeholder="Last Name" value="<%= @user.last_name %>">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" disabled placeholder="Email" value="<%= @user.email %>">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TODO Ajax update -->
+                <!-- <button type="submit" class="btn btn-info btn-fill">Update Profile</button> -->
+
+                <button id="logoutbtn" type="button" class="btn btn-danger delete btn-fill pull-right">Logout</button>
+
+                <!-- <button type="button" class="btn btn-danger delete btn-fill pull-right">
+                <i class="glyphicon glyphicon-trash"></i>
+                <span>Delete</span>
+                </button> -->
+
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    jQuery("#logoutbtn").click(function(){
+        window.location = '/logout';
+    });
+</script>

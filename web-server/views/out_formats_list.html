@@ -1,0 +1,24 @@
+<div class="dropdown format">
+  <button class="btn btn-primary btn-fill dropdown-toggle" type="button" data-toggle="dropdown"
+  {% if (file.format) { %}
+  disabled
+  {% } %}
+  ><span>
+      {% if (file.format) { %}
+      {%=file.format%}
+      {% } else { %}
+
+      <% if @targetFormat :%>
+        <%-@targetFormat%>
+        <% else : %>
+          <%-@formats[0]%>
+        <% end %>
+        
+      {% } %}  
+  </span> <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+      <% for format in @formats : %>
+      <li><a href="#" onclick="setFormat('<%-format%>',this);"><%-format%></a></li>
+      <% end %>
+  </ul>
+</div>

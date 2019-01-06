@@ -1,0 +1,27 @@
+<% extend 'layout.html' %>
+
+<div class="card">
+  <div class="header">
+    <h1 class="title">
+      <%- @pageTitle %>
+    </h1>
+    <p class="category"></p>
+  </div>
+  <div class="content">
+    <div class="typo-line">
+        <%- @text %>
+    </div>
+  </div>
+</div>
+
+<script src="<%- @config.site_static_url %>/js/faq.js"></script>
+
+<script>
+
+$(function () {
+	
+	$('.faq-list').goFaq ();
+
+});
+
+</script>

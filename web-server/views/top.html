@@ -1,0 +1,41 @@
+<% extend 'layout.html' %>
+<% include 'widget_ad_hor.html' %>
+  <div class="card">
+    <div class="header">
+      <h1 class="title">
+        <%- @pageTitle %>
+      </h1>
+      <p class="category"></p>
+    </div>
+    <div class="content">
+      <div class="typo-line">
+        <%- @text %>
+        
+        <table class="table table-hover table-striped top-users">
+            <thead>
+              <tr>
+              <th class="index">#</th>
+              <th class="photo">Photo</th>
+              <th>Name</th>
+              <th class="level">Level</th>
+              <th class="exp">Exp</th>
+            </tr>
+          </thead>
+            <tbody>
+            
+            <% for userOne in @topUsers : %>
+            <tr class="pos-<%- userOne.index %>">
+              <td class="index"><%- userOne.index %></td>
+              <td class="photo"><img src="<%- userOne.photo %>" class="avatar border-gray" alt="User photo"/></td>
+              <td><%- userOne.first_name %> <%- userOne.last_name %></td>
+              <td class="level"><%- userOne.level %></td>
+              <td class="exp"><%- userOne.exp %></td>
+            </tr>
+            <% end %>
+               
+            </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>

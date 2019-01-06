@@ -1,0 +1,16 @@
+<% extend 'layout.html' %>
+<% include 'upload_page.html', 
+{
+    pageTitle:@pageTitle, 
+    text:@text, 
+    config: @config, 
+    type: 'audio', 
+    formatsInfo:@formatsInfo, 
+    targetFormat:@targetFormat, 
+    formats: @tools.audioOut,
+    useMinifiedJS: @useMinifiedJS,
+    useMinifiedCSS: @useMinifiedCSS,
+    cssVersion: @cssVersion,
+    jsVersion: @jsVersion
+} 
+%>

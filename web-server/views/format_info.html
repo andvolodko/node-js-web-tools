@@ -1,0 +1,126 @@
+<% extend 'layout.html' %>
+<% include 'widget_ad_hor.html' %>
+<div class="col-md-8 two-col"> 
+<div class="card format_info">
+    <div class="header">
+      <h1 class="title">
+        <%- @format.name%> (.<%- @format.ext%>) - <%- @pageTitle %>
+      </h1>
+      <p class="category"></p>
+    </div>
+    <div class="content">
+      <div class="typo-line">
+        <%- @text %>
+
+        <% if(@format.intro) : %>
+        <h4 class="intro"><%- @format.name%> introduction</h4>
+        <p><%- @format.intro%></p>
+        <%end%>
+
+        <% if(@format.tech) : %>
+        <h4 class="tech"><span><%- @format.ext%></span> technical details</h4>
+        <p><%- @format.tech%></p>
+        <%end%>
+
+        <table class="table table-hover table-striped format-info">
+            <thead>
+                <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+          <tbody>
+          
+          <% if(@format.name) : %>
+          <tr>
+            <td>Full name</td>
+            <td><%- @format.name %></td>
+          </tr>
+          <%end%>
+
+          <% if(@format.ext) : %>
+          <tr>
+            <td>File Extension</td>
+            <td><%- @format.ext %></td>
+          </tr>
+          <%end%>
+
+          <% if(@format.dev) : %>
+          <tr>
+            <td>Developer</td>
+            <td><%- @format.dev %></td>
+          </tr>
+          <%end%>
+
+          <% if(@format.mime) : %>
+          <tr>
+            <td>MIME</td>
+            <td><%- @format.mime %></td>
+          </tr>
+         <%end%>
+
+          <% if(@format.type) : %>
+          <tr>
+            <td>Format category</td>
+            <td><a href="<%- @format.link %>" target="_blank" title="<%- @format.type %>"><%- @format.type %></a></td>
+          </tr>
+          <%end%>
+
+          <% if(@format.soft) : %>
+          <tr>
+            <td>Associated programs</td>
+            <td><%- @format.soft %></td>
+          </tr>
+          <%end%>
+          
+          <% if(@format.wiki) : %>
+          <tr>
+            <td>More info</td>
+            <td><a href="<%- @format.wiki %>" target="_blank" title="More detailes about <%- @format.name %>" rel="nofollow"><%- @format.wiki %></a></td>
+          </tr>
+          <%end%>
+
+          <% if(@format.link) : %>
+          <tr>
+            <td>Converter</td>
+            <td><a href="<%- @format.link %>/<%- @format.ext %>" target="_blank" title="Convert to <%- @format.name %>">Convert to <%- @format.ext %></a></td>
+          </tr>
+          <%end%>
+
+          </tbody>
+        </table>
+
+        <div class="keywords">
+          <p><span>Keywords:</span> <%- @format.ext %> info, <%- @format.ext %> file format, <%- @format.ext %> extension info, convert <%- @format.ext %>, <%- @format.ext %> supported convertions, <%- @format.ext %> file converter, <%- @format.ext %> free converter, <%- @format.ext %> online converter </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 two-col">
+  <div class="card">
+      <div class="header">
+        <h4 class="title">
+          Related convertions
+        </h4>
+        <p class="category"></p>
+      </div>
+      <div class="content">
+        <div class="typo-line">
+          <ul>
+              <% for ext in @tools[@format.format+'Out'] : %>
+                <% if @format.ext != ext : %>
+              <li><a href="<%- @format.link %>/<%- @format.ext %>-to-<%-ext %>" target="_blank" title="Free Converter from <%-@format.ext%> to <%-ext %>">Convert <%-@format.ext%> to <%-ext %></a></li>
+                <% end %>
+              <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="col-md-8 two-col">
+    <% include 'widget_stats.html' %>
+</div>

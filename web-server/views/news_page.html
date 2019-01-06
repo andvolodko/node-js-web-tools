@@ -1,0 +1,14 @@
+<% extend 'layout.html' %>
+<div class="card">
+    <div class="header">
+      <h1 class="title">
+        <%- @news.title %>
+      </h1>
+      <p class="category"><%- @news.date %></p>
+    </div>
+    <div class="content">
+      <div class="typo-line">
+          <%- @news.long %>
+      </div>
+    </div>
+  </div>

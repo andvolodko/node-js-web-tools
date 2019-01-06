@@ -1,0 +1,22 @@
+<% if @breadcrumbs : %>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    
+<% for breadcrumb in @breadcrumbs : %>
+{
+    "@type": "ListItem",
+    "position": <%= breadcrumb?.position %>,
+    "item": {
+      "@id": "<%= breadcrumb?.id %>",
+      "name": "<%= breadcrumb?.name %>"
+    }
+}<% if breadcrumb?.position < @breadcrumbs.length : %>,<% else : %><% end %>
+
+<% end %>
+  ]
+}
+</script>
+<% end %>

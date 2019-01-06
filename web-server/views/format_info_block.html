@@ -1,0 +1,58 @@
+<div class="card">
+  <div class="header">
+    <h4 class="title">
+      <%- @format.name%> (.<%- @format.ext%>)
+    </h4>
+    <p class="category"></p>
+  </div>
+  <div class="content">
+    <div class="typo-line">
+
+      <table class="table table-hover table-striped format-info">
+          <thead>
+              <tr>
+              <th>Parameter</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+        <tbody>
+        
+        <% if(@format.name) : %>
+        <tr>
+          <td>Full name</td>
+          <td><%- @format.name %></td>
+        </tr>
+        <%end%>
+
+        <% if(@format.ext) : %>
+        <tr>
+          <td>File Extension</td>
+          <td><%- @format.ext %></td>
+        </tr>
+        <%end%>
+
+        <% if(@format.type) : %>
+        <tr>
+          <td>Format category</td>
+          <td><a href="<%- @format.link %>" target="_blank" title="<%- @format.type %>"><%- @format.type %></a></td>
+        </tr>
+        <%end%>
+        
+        <% if(@format.dev) : %>
+        <tr>
+          <td>Developer</td>
+          <td><%- @format.dev %></td>
+        </tr>
+        <%end%>
+        
+        <tr>
+          <td>Detailed info</td>
+          <td><a href="/formats/<%- @format.ext %>" target="_blank" title="More detailes about <%- @format.name %>">More about <%- @format.ext %></a></td>
+        </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

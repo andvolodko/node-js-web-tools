@@ -1,0 +1,20 @@
+<ul class="nav">
+  <% for link in @menu2 : %>
+
+    <% if link.linkOrigin == @active : %>
+      <li class="active"><a href="<%- link.link %>" title="<%- link.title %>"><i class="<%= link.class %>"></i><p><%= link.name %></p></a></li>
+      <% else : %>
+        <li><a href="<%- link.link %>" title="<%- link.title %>"><i class="<%= link.class %>"></i><p><%= link.name %></p></a></li>
+        <% end %>
+
+  <% end %>
+
+  <li class="active-pro">
+      <div class="addthis_inline_share_toolbox"></div>
+      <a href="https://stopwatch-timers.com/" title="Online stopwatch, timer, clock, counter, world time" target="_blank"><i class="pe-7s-stopwatch"></i><p>Online stopwatch</p></a>
+      <a href="https://calculator-calculator.com/" title="Online basic calculator, computer calculator, calc, standart calculator" target="_blank"><i class="pe-7s-calculator"></i><p>Online calculator</p></a>
+  </li>
+
+</ul>
+
+<% include 'widget_ad_ver.html' %>

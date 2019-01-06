@@ -1,0 +1,27 @@
+<div class="formats-title"><h4><%=@title%></h4></div>
+<table class="table table-hover table-striped formats">
+  <thead>
+    <tr>
+    <th>Extension</th>
+    <th>Name</th>
+    <th>Conversion</th>
+  </tr>
+</thead>
+  <tbody>
+  
+  <% for format in @formats : %>
+  <% if(format.format == @type) : %>
+  <tr class="">
+    <td class="ext"><a href="/formats/<%- format.ext %>" title=""><%- format.ext %></a></td>
+    <td class="name"><%- format.name %>
+      <% if(format.name=='') : %>
+      <span><%- format.ext %></span> File Format
+      <% end %>
+    </td>
+    <td class="converter"><a href="<%- format.link %>/<%- format.ext %>" target="_blank" title="Online <%- format.ext %> converter"><span><%- format.ext %></span> converter</a></td>
+  </tr>
+  <% end %>
+  <% end %>
+      
+  </tbody>
+</table>

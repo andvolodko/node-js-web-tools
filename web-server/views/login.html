@@ -1,0 +1,26 @@
+<% extend 'layout.html' %>
+    <div class="col-md-6 col-md-offset-3">
+        <div class="card card-user text-center">
+            <div class="header">
+                <h1 class="title">Login</h1>
+                <p class="category">Make your choice</p>
+            </div>
+            <div class="content  loginbtns">
+                <p>
+                    <a href="/login/google" title="Login with Google">
+                        <img src="<%- @config.site_static_url %>/img/google_login.png" alt="Login with Google" />
+                    </a>
+                </p>
+                <p>
+                    <a href="/login/facebook" title="Login with Facebook">
+                        <img src="<%- @config.site_static_url %>/img/fb_login.png" alt="Login with Facebook" />
+                    </a>
+                </p>
+                <p>&nbsp;</p>
+                <p class="category">By clicking on the “Sign in” button, you agree to our
+                    <a href="/terms-of-use">Terms of Use</a> and our
+                    <a href="/privacy-policy">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+    </div>

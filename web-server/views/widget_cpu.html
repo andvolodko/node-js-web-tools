@@ -1,0 +1,61 @@
+<div class="widget widget-table action-table">
+    <div class="widget-header"> <i class="icon-th-list"></i>
+        <h3>Random CPU: 
+            <a href="<%= @randomCPU.link%>" title="<%- @randomCPU.manufacturer%> <%- @randomCPU.name%> specifications">
+                <strong><%- @randomCPU.manufacturer%> <%- @randomCPU.name%></strong>
+                </a></h3>
+    </div>
+    <!-- /widget-header -->
+    <div class="widget-content">
+        <table class="table table-striped table-bordered">
+            <tbody>
+                <tr>
+                    <td>Processor Base Frequency</td>
+                    <td><%- @randomCPU.frequency%> MHz</td>
+                </tr>
+                <tr>
+                    <td>Cores</td>
+                    <td><%- @randomCPU.cores%></td>
+                </tr>
+                <tr>
+                    <td>Socket</td>
+                    <td><%- @randomCPU.socket%></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div id="random-cpu-chart" class="site-chart"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="<%= @randomCPU.link%>" title="More detailes about <%- @randomCPU.manufacturer%> <%- @randomCPU.name%>">More detailes</a></td>
+                    <td><!-- Go to compare page --></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <!-- /widget-content -->
+</div>
+<!-- /widget -->
+<script>
+new Chartist.Bar('#random-cpu-chart', {
+  labels: ['Score: <%- @randomCPU.score%> of <%- @maxCPUScore%>'],
+  series: [
+        [<%- @randomCPU.score%>],
+        [<%- @maxCPUScore%>]
+    ]
+}, 
+{
+  width:380,
+  height:100,
+  seriesBarDistance: 20,
+  reverseData: true,
+  horizontalBars: true,
+  axisY: {
+    offset: 50
+  },
+    chartPadding: {
+      right: 60,
+    }
+});
+</script>

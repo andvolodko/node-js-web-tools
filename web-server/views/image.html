@@ -1,0 +1,15 @@
+<% extend 'layout.html' %>
+<% include 'upload_page.html', 
+{
+    pageTitle:@pageTitle, 
+    text:@text, 
+    config: @config, 
+    type: 'images', 
+    formatsInfo:@formatsInfo, 
+    targetFormat:@targetFormat, 
+    formats: @tools.imagesOut,
+    useMinifiedJS: @useMinifiedJS,
+    useMinifiedCSS: @useMinifiedCSS,
+    cssVersion: @cssVersion,
+    jsVersion: @jsVersion
+} %>

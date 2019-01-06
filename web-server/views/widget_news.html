@@ -1,0 +1,17 @@
+<% for item in @news : %>
+
+<div class="card">
+<div class="header">
+    <h1 class="title">
+            <a href="/blog/<%- item.link %>" class="news-item-title"><%- item.title %></a>
+    </h1>
+    <p class="category"><%- item.day %> <%- item.month_year %></p>
+</div>
+<div class="content">
+    <div class="typo-line">
+            <p class="news-item-preview"><%- item.short %></p>
+    </div>
+</div>
+</div>
+
+<% end %>

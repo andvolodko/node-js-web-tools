@@ -1,0 +1,15 @@
+<div class="widget widget-nopad">
+    <div class="widget-header"> <i class="icon-list-alt"></i>
+        <h3>Recent Searches</h3>
+    </div>
+    <!-- /widget-header -->
+    <div class="widget-content">
+<div class="search-queries">
+<% for item in @searchQueries : %>
+&nbsp;<a class="<%- item.class %>" href="/search/?q=<%= item.keyword %>" target="_blank"><%- item.keyword %></a>&nbsp;
+<% end %>
+</div>
+    </div>
+    <!-- /widget-content -->
+</div>
+<!-- /widget -->

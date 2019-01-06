@@ -1,0 +1,24 @@
+<% include 'widget_ad_hor.html' %>
+
+<% extend 'layout.html' %>
+  <div class="card">
+    <div class="header">
+      <h1 class="title">
+        <%- @pageTitle %>
+      </h1>
+      <p class="category"></p>
+    </div>
+    <div class="content">
+      <div class="typo-line">
+        <%- @text %>
+
+        <% include 'formats_list.html', {formats:@formats, title: 'eBook file formats', type: 'ebook'} %>
+        <% include 'formats_list.html', {formats:@formats, title: 'Audio file formats', type: 'audio'} %>
+        <% include 'formats_list.html', {formats:@formats, title: 'Image file formats', type: 'images'} %>
+        <% include 'formats_list.html', {formats:@formats, title: 'Document file formats', type: 'document'} %>
+        <% include 'formats_list.html', {formats:@formats, title: 'Video file formats', type: 'video'} %>
+
+      </div>
+    </div>
+  </div>
+  <% include 'widget_stats.html' %>
